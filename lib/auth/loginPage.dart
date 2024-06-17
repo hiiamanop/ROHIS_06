@@ -1,7 +1,6 @@
 import 'package:absensi_rohis/app/DPKMainPage.dart';
 import 'package:absensi_rohis/app/siswaMainPage.dart';
 import 'package:absensi_rohis/auth/registerPage.dart';
-import 'package:absensi_rohis/controller/loginController.dart';
 import 'package:absensi_rohis/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -14,8 +13,15 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  String accountType = "";
+
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: primaryColor,
       body: Column(
@@ -31,8 +37,8 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               children: [
                 Container(
-                  width: 400,
-                  height: 304.44,
+                  width: screenWidth * 0.8,
+                  height: screenHeight * 0.3,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('asset/images/imgLogin.png'),
@@ -158,7 +164,7 @@ class _LoginPageState extends State<LoginPage> {
                                   // if login as siswa, will direct to SiswamainPage, if login as DPK
                                   //will direct to DPKmainPage
 
-                                  onPressed: (){},
+                                  onPressed: () => {},
                                   child: Padding(
                                     padding: const EdgeInsets.all(5.0),
                                     child: Row(
