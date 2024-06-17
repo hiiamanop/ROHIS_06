@@ -1,5 +1,5 @@
-import 'package:absensi_rohis/app/DPKmainPage.dart';
-import 'package:absensi_rohis/app/SiswamainPage.dart';
+import 'package:absensi_rohis/app/DPKMainPage.dart';
+import 'package:absensi_rohis/app/siswaMainPage.dart';
 import 'package:absensi_rohis/auth/registerPage.dart';
 import 'package:absensi_rohis/controller/loginController.dart';
 import 'package:absensi_rohis/theme/theme.dart';
@@ -14,36 +14,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  final LoginController _loginController = LoginController();
-  
-  String accountType = "";
-
-  Future<void> login() async {
-    String email = _emailController.text;
-    String password = _passwordController.text;
-
-    String retrievedAccountType = await _loginController.login(email, password);
-
-    setState(() {
-      accountType = retrievedAccountType;
-    });
-
-    if (accountType == 'siswa') {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => SiswamainPage()),
-      );
-    } else if (accountType == 'dpk') {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => DPKmainPage()),
-      );
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,7 +78,6 @@ class _LoginPageState extends State<LoginPage> {
                             Container(
                               height: 50, // Set the desired height
                               child: TextFormField(
-                                controller: _emailController,
                                 keyboardType: TextInputType.emailAddress,
                                 decoration: InputDecoration(
                                   enabledBorder: OutlineInputBorder(
@@ -142,7 +111,6 @@ class _LoginPageState extends State<LoginPage> {
                             Container(
                               height: 50, // Set the desired height
                               child: TextFormField(
-                                controller: _passwordController,
                                 keyboardType: TextInputType.text,
                                 decoration: InputDecoration(
                                   enabledBorder: OutlineInputBorder(
@@ -190,7 +158,7 @@ class _LoginPageState extends State<LoginPage> {
                                   // if login as siswa, will direct to SiswamainPage, if login as DPK
                                   //will direct to DPKmainPage
 
-                                  onPressed: login,
+                                  onPressed: (){},
                                   child: Padding(
                                     padding: const EdgeInsets.all(5.0),
                                     child: Row(
