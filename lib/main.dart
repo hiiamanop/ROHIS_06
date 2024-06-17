@@ -1,4 +1,6 @@
 import 'package:absensi_rohis/app/DPKMainPage.dart';
+import 'package:absensi_rohis/app/daftarHadirPage.dart';
+import 'package:absensi_rohis/app/listKelasPage.dart';
 import 'package:absensi_rohis/app/siswaMainPage.dart';
 import 'package:absensi_rohis/app/splashPage.dart';
 import 'package:absensi_rohis/auth/loginPage.dart';
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LoginPage(),
+      home: LoginPage()
     );
   }
 }

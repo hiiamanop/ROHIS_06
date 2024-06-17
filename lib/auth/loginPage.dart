@@ -37,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               children: [
                 Container(
-                  width: screenWidth * 0.8,
+                  width: double.infinity,
                   height: screenHeight * 0.3,
                   decoration: BoxDecoration(
                     image: DecorationImage(
@@ -215,7 +215,7 @@ class _LoginPageState extends State<LoginPage> {
 
                             SizedBox(
                               height:
-                                  MediaQuery.of(context).size.height * 0.079,
+                                  MediaQuery.of(context).size.height * 0.1,
                             ),
                           ],
                         ),
@@ -226,9 +226,6 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
           ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.05,
-          )
         ],
       ),
     );
